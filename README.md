@@ -5,4 +5,8 @@ An experiment in using the WordPress REST API with React, with guidance from Bra
 To get this up and running, follow these steps:
 
 1) cd ReactWordPress
-2) docker compose up -d
+2) docker-compose up -d
+
+To tear down
+
+1) docker-compose down --volumes
