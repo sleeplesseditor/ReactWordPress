@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BookItem from './BookItem';
 import axios from 'axios';
 
 class Books extends Component {
@@ -17,12 +18,20 @@ class Books extends Component {
     }
 
     render() {
-        console.log(this.state);
-        return (
-            <div>
-                
-            </div>
-        )
+        const { books, isLoaded } = this.state;
+        if(isLoaded) {
+            return (
+                <div>
+                    {books.map(book => (
+                        <BookItem 
+                            key={book.id} 
+                            book={book} 
+                        />
+                    ))}
+                </div>
+            )
+        }
+        return <h3>Loading...</h3>
     }
 }
 
